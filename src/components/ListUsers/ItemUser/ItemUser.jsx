@@ -27,16 +27,6 @@ export const ItemUser = ({ id, avatar, user, tweets, followers }) => {
 
   const CONTACTS_KEY = `${id}contacts`;
 
-  // useEffect(() => {
-  //   const savedState = localStorage.getItem(CONTACTS_KEY);
-  //   let parseState;
-  //   try {
-  //     parseState = JSON.parse(savedState) ?? initialContacts;
-  //   } catch (error) {
-  //     parseState = [];
-  //   }
-  //   setContacts(parseState);
-  // }, []);
   useEffect(() => {
     const savedState = localStorage.getItem(CONTACTS_KEY);
     let parseState;
