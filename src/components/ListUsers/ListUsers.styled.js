@@ -5,4 +5,5 @@ export const GalleryUsers = styled.ul`
   flex-wrap: wrap;
   gap: 70px;
   justify-content: center;
+  font-family: Montserrat;
 `;
