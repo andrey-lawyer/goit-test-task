@@ -43,6 +43,7 @@ export const CardUser = styled.li`
   flex-direction: column;
   padding-bottom: ${props => props.theme.spacing(12)};
   padding-top: 38px;
+
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
   width: 454px;
