@@ -57,7 +57,7 @@ export const CardUser = styled.li`
 `;
 
 export const AvatarUser = styled.img`
-  margin-bottom: ${props => props.theme.spacing(8)};
+  margin-bottom: ${props => props.theme.spacing(11)};
   margin-top: 9px;
   padding: 13px;
   z-index: 1;

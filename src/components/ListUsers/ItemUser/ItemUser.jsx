@@ -31,7 +31,7 @@ export const ItemUser = ({ id, avatar, user, tweets, followers }) => {
   let textButton;
   let userFollowers;
   if (switching) {
-    textButton = 'Folow';
+    textButton = 'Follow';
     userFollowers = followers;
   } else {
     textButton = 'Following';
