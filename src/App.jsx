@@ -6,7 +6,6 @@ export const App = () => {
   return (
     <>
       <ListUsers users={users} />
-
       <GlobalStyle />
     </>
   );

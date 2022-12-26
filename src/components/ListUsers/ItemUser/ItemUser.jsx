@@ -1,11 +1,24 @@
 import { useState, useEffect } from 'react';
-// import PropTypes from 'prop-types';
+import oneImg from 'images/oneImage.png';
+import heart from 'images/heart.png';
+import circle from 'images/Ellipse.png';
+import brickOne from 'images/brickOne.png';
+import line from 'images/line.png';
+import brickTwo from 'images/brickTwo.png';
+import icons from 'images/icons.svg';
+
 import {
   CardUser,
   NumberТweets,
   NumberFollowers,
   AvatarUser,
   Button,
+  Heart,
+  Circle,
+  BrickOne,
+  BrickTwo,
+  Line,
+  IconLogo,
 } from './ItemUser.styled';
 
 export const ItemUser = ({ id, avatar, user, tweets, followers }) => {
@@ -18,12 +31,17 @@ export const ItemUser = ({ id, avatar, user, tweets, followers }) => {
   let textButton;
   let userFollowers;
   if (switching) {
-    textButton = 'FOLLOW';
+    textButton = 'Folow';
     userFollowers = followers;
   } else {
-    textButton = 'FOLLOWING';
+    textButton = 'Following';
     userFollowers = followers + 1;
   }
+
+  userFollowers = String(userFollowers);
+  const firstWord = userFollowers.slice(0, 3);
+  const secondWord = userFollowers.slice(3, userFollowers.length);
+  userFollowers = firstWord + ',' + secondWord;
 
   const CONTACTS_KEY = `${id}contacts`;
 
@@ -32,7 +50,6 @@ export const ItemUser = ({ id, avatar, user, tweets, followers }) => {
     let parseState;
     try {
       parseState = JSON.parse(savedState) ?? true;
-      console.log(parseState);
     } catch (error) {
       parseState = true;
     }
@@ -45,9 +62,20 @@ export const ItemUser = ({ id, avatar, user, tweets, followers }) => {
 
   return (
     <CardUser>
-      <AvatarUser src={avatar} alt={user} width="48" />
-      <NumberТweets>{tweets}</NumberТweets>
-      <NumberFollowers>{userFollowers}</NumberFollowers>
+      <IconLogo width="88">
+        <use href={`${icons}#icon-Logo`}></use>
+      </IconLogo>
+      <Heart src={heart} alt={heart} width="44" />
+      <Circle src={circle} alt={circle} width="96" />
+      <BrickOne src={brickOne} alt={brickOne} width="56" />
+      <Line src={line} alt={line} width="454" />
+      <BrickTwo src={brickTwo} alt={brickTwo} width="39" />
+
+      <img src={oneImg} alt={user} />
+
+      <AvatarUser src={avatar} alt={user} width="80" />
+      <NumberТweets>{tweets} tweets</NumberТweets>
+      <NumberFollowers>{userFollowers} followers</NumberFollowers>
       <Button
         colorButton={switching}
         type="button"
